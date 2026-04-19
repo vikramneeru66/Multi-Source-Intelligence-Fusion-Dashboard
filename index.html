@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus: Multi-Source Intelligence Fusion</title>
+    <!-- Leaflet CSS for the Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-satellite-dish"></i>
+                <h1>NEXUS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><i class="fa-solid fa-chart-line"></i> Global Overview</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Cyber Threats</li>
+                    <li><i class="fa-solid fa-plane-up"></i> Asset Tracking</li>
+                    <li><i class="fa-solid fa-file-shield"></i> Reports</li>
+                </ul>
+            </nav>
+            <div class="system-status">
+                <p>System Status: <span class="status-indicator online"></span> Online</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h2>Intelligence Fusion Dashboard</h2>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Commander&background=0D8ABC&color=fff" alt="User Profile">
+                </div>
+            </header>
+
+            <!-- Top Stats Widgets -->
+            <section class="stats-grid">
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="stat-details">
+                        <h3>Active Threats</h3>
+                        <p id="stat-threats">--</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon info"><i class="fa-solid fa-earth-americas"></i></div>
+                    <div class="stat-details">
+                        <h3>Regions Monitored</h3>
+                        <p id="stat-regions">--</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon success"><i class="fa-solid fa-server"></i></div>
+                    <div class="stat-details">
+                        <h3>Systems Online</h3>
+                        <p id="stat-systems">--</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map and Feed Area -->
+            <section class="content-grid">
+                <!-- Map Container -->
+                <div class="map-container glass-panel">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> Live Threat Map</h3>
+                    <div id="map"></div>
+                </div>
+
+                <!-- Live Feed Container -->
+                <div class="feed-container glass-panel">
+                    <h3><i class="fa-solid fa-rss"></i> Live Intelligence Feed</h3>
+                    <div class="feed-list" id="feed-list">
+                        <!-- Feed items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Load Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Load Data -->
+    <script src="data.js"></script>
+    <!-- Load Main Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
